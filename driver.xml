@@ -1,0 +1,63 @@
+<devicedata>
+  <copyright>Copyright 2026</copyright>
+  <manufacturer>Bryan Rowe</manufacturer>
+  <name>Refresh Navigators</name>
+  <model>Refresh Navigators</model>
+  <creator>Bryan Rowe</creator>
+  <created>10/20/2026 21:00</created>
+  <modified>10/20/2026 21:00</modified>
+  <version>1</version>
+  <control>lua_gen</control>
+  <driver>DriverWorks</driver>
+
+  <combo>true</combo>
+  <proxies>
+    <proxy>refresh-navigators</proxy>
+  </proxies>
+
+  <config>
+    <documentation>
+Refresh Navigators
+
+Sends Director the same project-info update (PIP) that Composer's
+File > Refresh Navigators sends, over Director's local port 5020.
+
+Typical use: on the project root's startup event, add a Delay of
+2 minutes, then this driver's Refresh Navigators command. That rebuilds
+the Listen menus after any director restart or reboot.
+
+Each refresh makes every Navigator reload, just like the Composer menu item.
+    </documentation>
+
+    <script file="driver.lua"></script>
+
+    <actions>
+      <action>
+        <name>Refresh Navigators</name>
+        <command>REFRESH_NAVIGATORS</command>
+      </action>
+    </actions>
+
+    <commands>
+      <command>
+        <name>REFRESH_NAVIGATORS</name>
+        <description>Refresh Navigators</description>
+      </command>
+    </commands>
+
+    <properties>
+      <property>
+        <name>Debug Mode</name>
+        <type>LIST</type>
+        <items><item>Off</item><item>On</item></items>
+        <default>Off</default>
+      </property>
+      <property>
+        <name>Last Refresh:</name>
+        <type>STRING</type>
+        <default>Never</default>
+        <readonly>true</readonly>
+      </property>
+    </properties>
+  </config>
+</devicedata>

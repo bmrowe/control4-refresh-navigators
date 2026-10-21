@@ -23,17 +23,6 @@ project version, and every Navigator reloads.
 3. Click **Refresh Navigators** on the driver's Actions tab once to check it works: your
    Navigators should blink and reload.
 
-## Use after every restart
-
-In Programming, select the project root and choose **When the project is loaded**, then add:
-
-1. **Delay** 1 minute
-2. **Refresh Navigators** (this driver's command)
-3. Optionally, a notification so you know the system is ready
-
-The project-loaded event fires about 35 seconds after Director starts. That's a few seconds after
-the controller's own audio bindings appear, so a short delay is enough.
-
 ## Properties
 
 - **Debug Mode**: logs each step to the Lua output.

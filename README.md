@@ -4,13 +4,6 @@ A tiny DriverWorks driver that does what **File > Refresh Navigators** does in C
 programming. It has one command, **Refresh Navigators**, that you can run from the driver's
 Actions tab or from any programming script.
 
-## Why
-
-After a Director restart or controller reboot, the Listen menu in every room can come up empty
-even though the sources still play. Director builds its room lists before all audio paths exist
-and doesn't rebuild them until it receives a project-info update, which is what Composer's Refresh
-Navigators sends. This driver sends that update automatically, so you don't need Composer.
-
 ## How it works
 
 The driver connects to Director's local command port (`127.0.0.1:5020`), sends a bare PIP
